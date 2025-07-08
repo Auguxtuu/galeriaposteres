@@ -55,7 +55,7 @@ main, header {
 /*Estilos Gerais e Tema*/
 body {
     background-color: #121212;
-    color: #e0e0e0;
+    color: #ee0404;
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
@@ -103,9 +103,9 @@ header {
 }
 
 .search-container button {
-    background-color: #03dac6; /* Cor de destaque ciano */
+    background-color: #03dac6; /*Cor de destaque*/
     border: none;
-    border-radius: 50%; /* Deixa o botão redondo */
+    border-radius: 50%; /*Deixa o botão redondo*/
     width: 32px;
     height: 32px;
     display: flex;
@@ -117,7 +117,7 @@ header {
 }
 
 .search-container button:hover {
-    background-color: #02b3a1;
+    background-color: #07f5e1;
 }
 
 .search-container button svg {
@@ -144,7 +144,7 @@ main {
 
 .category-title {
     font-size: 2rem;
-    color: #03dac6;
+    color: #fda707;
     border-bottom: 1px solid #444;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
@@ -166,7 +166,7 @@ main {
 }
 
 .poster-title {
-    color: white;
+    color: rgb(227, 243, 6);
     font-size: 1rem;
     text-align: center;
     margin: 0 0 0.75rem 0;
@@ -188,7 +188,7 @@ main {
 }
 
 .poster-item:hover img {
-    box-shadow: 0 0 20px rgba(3, 218, 198, 0.6); /*O brilhinho ao redor do pôster*/
+    box-shadow: 0 0 40px rgba(235, 6, 178, 0.6); /*O brilhinho ao redor do pôster*/
 }
 
 /*Estilos da Janela Modal de Detalhes*/
