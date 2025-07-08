@@ -46,10 +46,9 @@ html {
     color: #fff;
 }
 
-/* --- Ajuste no Conteúdo Principal --- */
-/* IMPORTANTE: Empurra o conteúdo principal para o lado */
+/*IMPORTANTE: Empurra o conteúdo principal para o lado*/
 main, header {
-    margin-left: 220px; /* Mesma largura da barra lateral! */
+    margin-left: 220px; /*Mesma largura da barra lateral!*/
 }
 
 /*Estilos Gerais e Tema*/
@@ -79,7 +78,7 @@ header {
     color: #aaa;
 }
 
-/* --- Estilos da Nova Barra de Pesquisa --- */
+/*Estilos da Nova Barra de Pesquisa*/
 .search-container {
     display: flex;
     align-items: center;
@@ -123,7 +122,7 @@ header {
 .search-container button svg {
     width: 16px;
     height: 16px;
-    fill: #121212; /* Cor do ícone (preto) */
+    fill: #121212; /*Cor do ícone (preto)*/
 }
 
 header h1 {
@@ -268,7 +267,7 @@ main {
 }
 
 #modal-trailer-link:hover {
-    background-color: #02b3a1; /* Um tom de ciano mais escuro ao passar o mouse */
+    background-color: #02b3a1;
 }
 
 /*Estilos da Barra de Rolagem*/
