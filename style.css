@@ -1,0 +1,292 @@
+html {
+    scroll-behavior: smooth; /*Faz o "pulo" para a categoria ser uma rolagem suave*/
+}
+
+/*Estilo da Barra Lateral*/
+#sidebar {
+    position: fixed; /*Mantém fixo na tela mesmo com a rolagem*/
+    left: 0;
+    top: 0;
+    width: 220px; /*Largura da barra lateral*/
+    height: 100%; /*Ocupa a altura inteira da tela*/
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-right: 1px solid #333;
+    overflow-y: auto; /*Adiciona rolagem se tiver muitas categorias*/
+    z-index: 500; /*Garante que fique na frente, mas atrás da modal*/
+    box-sizing: border-box; /*Garante que o padding não aumente a largura*/
+}
+
+#sidebar h2 {
+    color: #f17907;
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 1rem;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar a {
+    display: block;
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease;
+}
+
+#sidebar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* --- Ajuste no Conteúdo Principal --- */
+/* IMPORTANTE: Empurra o conteúdo principal para o lado */
+main, header {
+    margin-left: 220px; /* Mesma largura da barra lateral! */
+}
+
+/*Estilos Gerais e Tema*/
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: left; /*Mudamos de 'center' para 'left' para se alinhar com a sidebar*/
+    padding: 1.5rem 2rem; /* Ajuste no padding */
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #333;
+    
+    /*Novas propriedades para alinhar título e busca*/
+    display: flex;
+    justify-content: space-between; /*Empurra os itens para os cantos opostos*/
+    align-items: center; /*Alinha verticalmente no centro*/
+}
+
+/*Deixa o título sem margem para não atrapalhar o alinhamento*/
+.header-title p {
+    margin: 0;
+    color: #aaa;
+}
+
+/* --- Estilos da Nova Barra de Pesquisa --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    padding: 5px 5px 5px 15px;
+    border: 1px solid #444;
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+}
+
+.search-container input::placeholder {
+    color: #888;
+}
+
+.search-container button {
+    background-color: #03dac6; /* Cor de destaque ciano */
+    border: none;
+    border-radius: 50%; /* Deixa o botão redondo */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.search-container button:hover {
+    background-color: #02b3a1;
+}
+
+.search-container button svg {
+    width: 16px;
+    height: 16px;
+    fill: #121212; /* Cor do ícone (preto) */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*Estilos das Categorias e Carrossel*/
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: #03dac6;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.poster-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/*Estilos de Cada Item (Pôster + Título)*/
+.poster-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 200px; 
+    position: relative;
+}
+
+.poster-title {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 0.75rem 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.poster-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: box-shadow 0.5s ease; /*Transição gradual para o brilhinho*/
+}
+
+.poster-item:hover img {
+    box-shadow: 0 0 20px rgba(3, 218, 198, 0.6); /*O brilhinho ao redor do pôster*/
+}
+
+/*Estilos da Janela Modal de Detalhes*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    display: flex;
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    position: relative;
+    gap: 2rem;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modal-poster {
+    width: 35%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-text-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#modal-title {
+    margin-top: 0;
+    color: #03dac6;
+}
+
+#modal-synopsis {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+#modal-trailer-link {
+    display: inline-block; /* Para o padding e margem funcionarem corretamente */
+    background-color: #03dac6; /* Cor de destaque ciano */
+    color: #121212; /* Texto escuro para contrastar */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 1.5rem; /* Espaço entre a sinopse e o botão */
+    transition: background-color 0.2s ease;
+}
+
+#modal-trailer-link:hover {
+    background-color: #02b3a1; /* Um tom de ciano mais escuro ao passar o mouse */
+}
+
+/*Estilos da Barra de Rolagem*/
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}

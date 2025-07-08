@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Pôsteres</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/jpeg" href="icon.png">
+</head>
+<body>
+    <nav id="sidebar">
+        <h2>Categorias</h2>
+        <ul id="sidebar-links">
+            </ul>
+    </nav>
+    
+    <header>
+        <div class="header-title">
+            <h1>Galeria de Pôsteres</h1>
+            <p>Filmes, Séries, Animes e mais!</p>
+        </div>
+    
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar...">
+            <button type="button" aria-label="Buscar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="gallery-container">
+        </main>
+
+    <div id="detailsModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close-button">&times;</span>
+            <img id="modal-poster" src="" alt="Pôster do filme">
+            <div class="modal-text-content">
+                <h2 id="modal-title">Título do Filme</h2>
+                <p id="modal-synopsis">Sinopse do Filme</p>
+                <a id="modal-trailer-link" href="#" target="_blank" rel="noopener noreferrer">Assista ao Trailer</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
