@@ -65,11 +65,13 @@ header {
     padding: 1.5rem 2rem; /* Ajuste no padding */
     background-color: #1f1f1f;
     border-bottom: 2px solid #333;
-    
-    /*Novas propriedades para alinhar título e busca*/
     display: flex;
     justify-content: space-between; /*Empurra os itens para os cantos opostos*/
     align-items: center; /*Alinha verticalmente no centro*/
+    margin-left: 220px;
+    position: sticky;
+    top: 0;
+    z-index: 600;
 }
 
 /*Deixa o título sem margem para não atrapalhar o alinhamento*/
